@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'features/vacancies/page/vacancies.dart';
+import 'features/vacancies/presentation/page/vacancies.dart';
 
 void main() {
   runApp(const MyApp());

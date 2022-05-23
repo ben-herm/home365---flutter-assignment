@@ -13,7 +13,7 @@ class GoogleMaps extends StatefulWidget {
 }
 
 class GoogleMapsState extends State<GoogleMaps> {
-  final Completer<GoogleMapController> _controller = Completer();
+  late final GoogleMapController _controller;
   final Location _location = Location();
   static const CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(37.42796133580664, -122.085749655962),
@@ -26,13 +26,13 @@ class GoogleMapsState extends State<GoogleMaps> {
       tilt: 59.440717697143555,
       zoom: 19.151926040649414);
 
-  void _onMapCreated() {
-    _location.onLocationChanged.listen((l) async {
-      final GoogleMapController controller = await _controller.future;
-      controller.animateCamera(
+  void _onMapCreated(GoogleMapController _cntlr) {
+    _location.onLocationChanged.listen((l) {
+      _controller = _cntlr;
+      _controller.animateCamera(
         CameraUpdate.newCameraPosition(
           CameraPosition(
-              target: LatLng(l.latitude ?? 0, l.longitude ?? 0), zoom: 40),
+              target: LatLng(l.latitude ?? 0, l.longitude ?? 0), zoom: 15),
         ),
       );
     });
@@ -44,17 +44,17 @@ class GoogleMapsState extends State<GoogleMaps> {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       height: 300,
       child: GoogleMap(
-        mapType: MapType.hybrid,
+        myLocationEnabled: true,
+        mapType: MapType.normal,
         initialCameraPosition: _kGooglePlex,
-        onMapCreated: (GoogleMapController controller) {
-          _onMapCreated();
-        },
+        onMapCreated: _onMapCreated,
       ),
     );
   }
 
-  // Future<void> _goToTheLake() async {
-  //   final GoogleMapController controller = await _controller.future;
-  //   controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
-  // }
+  Future<void> _goToTheLake() async {
+    final Completer<GoogleMapController> _controller = Completer();
+    final GoogleMapController controller = await _controller.future;
+    controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
+  }
 }
