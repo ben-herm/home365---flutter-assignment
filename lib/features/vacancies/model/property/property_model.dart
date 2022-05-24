@@ -19,6 +19,9 @@ class PropertyModel with _$PropertyModel {
     @Default(TenantModel()) final TenantModel tenant,
   }) = _PropertyModel;
 
+  factory PropertyModel.empty() {
+    return const PropertyModel();
+  }
   factory PropertyModel.fromJson(Map<String, dynamic> json) =>
       _$PropertyModelFromJson(json);
 }

@@ -5,8 +5,8 @@ part 'colors.dart';
 part 'fonts.dart';
 part '../assets/assets.dart';
 
-class S {
-  S._();
+class T {
+  T._();
   static final colors = _Colors();
   static final fonts = _Fonts();
   static final assets = _Assets();

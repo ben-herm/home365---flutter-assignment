@@ -17,10 +17,10 @@ class MainHeader extends StatelessWidget {
         vertical: 8,
       ),
       alignment: Alignment.center,
-      color: S.colors.orange,
+      color: T.colors.orange,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Image.asset(S.assets.logo),
+        child: Image.asset(T.assets.logo),
       ),
     );
   }
