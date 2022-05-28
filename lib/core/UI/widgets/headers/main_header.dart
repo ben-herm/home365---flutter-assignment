@@ -10,14 +10,14 @@ class MainHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 75,
+      height: 80,
       width: double.infinity,
       padding: const EdgeInsets.symmetric(
         horizontal: 16,
         vertical: 8,
       ),
       alignment: Alignment.center,
-      color: T.colors.orange,
+      color: T.colors.light,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Image.asset(T.assets.logo),

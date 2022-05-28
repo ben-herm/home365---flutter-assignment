@@ -30,7 +30,8 @@ class _$PropertyModelTearOff {
       String owner = '',
       String ownerStatus = '',
       String plan = '',
-      TenantModel tenant = const TenantModel()}) {
+      TenantModel tenant = const TenantModel(),
+      List<double?>? coordinates}) {
     return _PropertyModel(
       propertyId: propertyId,
       createdOn: createdOn,
@@ -40,6 +41,7 @@ class _$PropertyModelTearOff {
       ownerStatus: ownerStatus,
       plan: plan,
       tenant: tenant,
+      coordinates: coordinates,
     );
   }
 
@@ -61,6 +63,7 @@ mixin _$PropertyModel {
   String get ownerStatus => throw _privateConstructorUsedError;
   String get plan => throw _privateConstructorUsedError;
   TenantModel get tenant => throw _privateConstructorUsedError;
+  List<double?>? get coordinates => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -81,7 +84,8 @@ abstract class $PropertyModelCopyWith<$Res> {
       String owner,
       String ownerStatus,
       String plan,
-      TenantModel tenant});
+      TenantModel tenant,
+      List<double?>? coordinates});
 
   $TenantModelCopyWith<$Res> get tenant;
 }
@@ -105,6 +109,7 @@ class _$PropertyModelCopyWithImpl<$Res>
     Object? ownerStatus = freezed,
     Object? plan = freezed,
     Object? tenant = freezed,
+    Object? coordinates = freezed,
   }) {
     return _then(_value.copyWith(
       propertyId: propertyId == freezed
@@ -139,6 +144,10 @@ class _$PropertyModelCopyWithImpl<$Res>
           ? _value.tenant
           : tenant // ignore: cast_nullable_to_non_nullable
               as TenantModel,
+      coordinates: coordinates == freezed
+          ? _value.coordinates
+          : coordinates // ignore: cast_nullable_to_non_nullable
+              as List<double?>?,
     ));
   }
 
@@ -165,7 +174,8 @@ abstract class _$PropertyModelCopyWith<$Res>
       String owner,
       String ownerStatus,
       String plan,
-      TenantModel tenant});
+      TenantModel tenant,
+      List<double?>? coordinates});
 
   @override
   $TenantModelCopyWith<$Res> get tenant;
@@ -192,6 +202,7 @@ class __$PropertyModelCopyWithImpl<$Res>
     Object? ownerStatus = freezed,
     Object? plan = freezed,
     Object? tenant = freezed,
+    Object? coordinates = freezed,
   }) {
     return _then(_PropertyModel(
       propertyId: propertyId == freezed
@@ -226,6 +237,10 @@ class __$PropertyModelCopyWithImpl<$Res>
           ? _value.tenant
           : tenant // ignore: cast_nullable_to_non_nullable
               as TenantModel,
+      coordinates: coordinates == freezed
+          ? _value.coordinates
+          : coordinates // ignore: cast_nullable_to_non_nullable
+              as List<double?>?,
     ));
   }
 }
@@ -241,7 +256,8 @@ class _$_PropertyModel extends _PropertyModel {
       this.owner = '',
       this.ownerStatus = '',
       this.plan = '',
-      this.tenant = const TenantModel()})
+      this.tenant = const TenantModel(),
+      this.coordinates})
       : super._();
 
   factory _$_PropertyModel.fromJson(Map<String, dynamic> json) =>
@@ -271,10 +287,12 @@ class _$_PropertyModel extends _PropertyModel {
   @JsonKey()
   @override
   final TenantModel tenant;
+  @override
+  final List<double?>? coordinates;
 
   @override
   String toString() {
-    return 'PropertyModel(propertyId: $propertyId, createdOn: $createdOn, address: $address, occupiedStats: $occupiedStats, owner: $owner, ownerStatus: $ownerStatus, plan: $plan, tenant: $tenant)';
+    return 'PropertyModel(propertyId: $propertyId, createdOn: $createdOn, address: $address, occupiedStats: $occupiedStats, owner: $owner, ownerStatus: $ownerStatus, plan: $plan, tenant: $tenant, coordinates: $coordinates)';
   }
 
   @override
@@ -292,7 +310,9 @@ class _$_PropertyModel extends _PropertyModel {
             const DeepCollectionEquality()
                 .equals(other.ownerStatus, ownerStatus) &&
             const DeepCollectionEquality().equals(other.plan, plan) &&
-            const DeepCollectionEquality().equals(other.tenant, tenant));
+            const DeepCollectionEquality().equals(other.tenant, tenant) &&
+            const DeepCollectionEquality()
+                .equals(other.coordinates, coordinates));
   }
 
   @override
@@ -305,7 +325,8 @@ class _$_PropertyModel extends _PropertyModel {
       const DeepCollectionEquality().hash(owner),
       const DeepCollectionEquality().hash(ownerStatus),
       const DeepCollectionEquality().hash(plan),
-      const DeepCollectionEquality().hash(tenant));
+      const DeepCollectionEquality().hash(tenant),
+      const DeepCollectionEquality().hash(coordinates));
 
   @JsonKey(ignore: true)
   @override
@@ -327,7 +348,8 @@ abstract class _PropertyModel extends PropertyModel {
       String owner,
       String ownerStatus,
       String plan,
-      TenantModel tenant}) = _$_PropertyModel;
+      TenantModel tenant,
+      List<double?>? coordinates}) = _$_PropertyModel;
   const _PropertyModel._() : super._();
 
   factory _PropertyModel.fromJson(Map<String, dynamic> json) =
@@ -349,6 +371,8 @@ abstract class _PropertyModel extends PropertyModel {
   String get plan;
   @override
   TenantModel get tenant;
+  @override
+  List<double?>? get coordinates;
   @override
   @JsonKey(ignore: true)
   _$PropertyModelCopyWith<_PropertyModel> get copyWith =>

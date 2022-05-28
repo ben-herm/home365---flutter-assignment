@@ -18,6 +18,9 @@ _$_PropertyModel _$$_PropertyModelFromJson(Map<String, dynamic> json) =>
       tenant: json['tenant'] == null
           ? const TenantModel()
           : TenantModel.fromJson(json['tenant'] as Map<String, dynamic>),
+      coordinates: (json['coordinates'] as List<dynamic>?)
+          ?.map((e) => (e as num?)?.toDouble())
+          .toList(),
     );
 
 Map<String, dynamic> _$$_PropertyModelToJson(_$_PropertyModel instance) =>
@@ -30,4 +33,5 @@ Map<String, dynamic> _$$_PropertyModelToJson(_$_PropertyModel instance) =>
       'ownerStatus': instance.ownerStatus,
       'plan': instance.plan,
       'tenant': instance.tenant,
+      'coordinates': instance.coordinates,
     };

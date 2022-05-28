@@ -3,7 +3,7 @@
     {
       "propertyId": "9dee2532-44b8-4697-a759-ccffe7551623",
       "createdOn": "2021-08-15T07:13:59.533+00:00",
-      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt K, Norfolk",
+      "address": "Tzahal St 104, Kiryat Ono",
       "occupiedStats": "occupied",
       "owner": "The Residential Corporation",
       "ownerStatus": "active",
@@ -18,7 +18,7 @@
     {
       "propertyId": "40675867-576f-41f6-97ca-9f807d3ac4c9",
       "createdOn": "2021-08-15T07:13:49.607+00:00",
-      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt J, Norfolk",
+      "address": "Haim Arlozorov St 30, Petah Tikva",
       "occupiedStats": "vacant",
       "owner": "The Residential Corporation",
       "ownerStatus": "active",
@@ -33,7 +33,7 @@
     {
       "propertyId": "4fcc5610-c56e-49e8-b66a-04a600aa929c",
       "createdOn": "2021-08-15T07:13:45.487+00:00",
-      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt I, Norfolk",
+      "address": "Abba Hillel Silver Rd 301, Ramat Gan",
       "occupiedStats": "vacant",
       "owner": "The Residential Corporation",
       "ownerStatus": "active",
@@ -48,7 +48,7 @@
     {
       "propertyId": "063ce7e1-1cb1-4562-8f8f-77ae99672a4d",
       "createdOn": "2021-08-15T07:13:41.163+00:00",
-      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt H, Norfolk",
+      "address": "Zeev Jabotinsky St 72, Petah Tikva",
       "occupiedStats": "vacant",
       "owner": "The Residential Corporation",
       "ownerStatus": "active",
@@ -63,7 +63,7 @@
     {
       "propertyId": "ed46bca9-d302-4309-a2f1-937504fe9ba2",
       "createdOn": "2021-08-15T07:13:36.547+00:00",
-      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt G, Norfolk",
+      "address": "Ha-Banai St 19, Holon",
       "occupiedStats": "vacant",
       "owner": "The Residential Corporation",
       "ownerStatus": "active",
@@ -78,7 +78,7 @@
     {
       "propertyId": "7f8e7d83-2e6d-4455-9fac-b7191df461c6",
       "createdOn": "2021-08-15T07:13:31.690+00:00",
-      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt F, Norfolk",
+      "address": "Mendel Matityahu St 12, Ramat Gan, 5229017",
       "occupiedStats": "occupied",
       "owner": "The Residential Corporation",
       "ownerStatus": "active",
@@ -93,7 +93,7 @@
     {
       "propertyId": "ad34859e-033a-4ba3-b8f5-41e8a3496f38",
       "createdOn": "2021-08-15T07:13:26.157+00:00",
-      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt E, Norfolk",
+      "address": "Etsel St 6, Ramat Gan, 5227403",
       "occupiedStats": "occupied",
       "owner": "The Residential Corporation",
       "ownerStatus": "active",
@@ -108,7 +108,7 @@
     {
       "propertyId": "1685ad1f-1f09-4a41-9b1d-f15db6ae665c",
       "createdOn": "2021-08-15T07:13:21.183+00:00",
-      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt D, Norfolk",
+      "address": "Negba Rd 33, Ramat Gan",
       "occupiedStats": "occupied",
       "owner": "The Residential Corporation",
       "ownerStatus": "active",
@@ -123,7 +123,7 @@
     {
       "propertyId": "94a58a0d-b030-4abc-ac4c-496a81767ce2",
       "createdOn": "2021-08-15T07:13:16.197+00:00",
-      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt C, Norfolk",
+      "address": "Shu'alei Shimshon St 2, Ramat Gan, 5238602",
       "occupiedStats": "vacant",
       "owner": "The Residential Corporation",
       "ownerStatus": "active",
@@ -138,7 +138,7 @@
     {
       "propertyId": "bd41e1f5-2653-4b12-8198-13e6761746df",
       "createdOn": "2021-08-15T07:13:11.423+00:00",
-      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt B, Norfolk",
+      "address": "Bialik St 2, Ramat Gan",
       "occupiedStats": "occupied",
       "owner": "The Residential Corporation",
       "ownerStatus": "active",
@@ -153,7 +153,7 @@
     {
       "propertyId": "18386ac9-6390-4245-bde1-4c072ab6ae86",
       "createdOn": "2021-08-15T07:13:06.733+00:00",
-      "address": "721 W Princess Anne Rd % Norfolk, VA 23517, Unit 721 Apt A, Norfolk",
+      "address": "Sderot HaHayil 2, Tel Aviv-Yafo",
       "occupiedStats": "vacant",
       "owner": "The Residential Corporation",
       "ownerStatus": "active",
@@ -168,7 +168,7 @@
     {
       "propertyId": "a2b9264d-f6a3-4f6b-a997-be9a65922ffb",
       "createdOn": "2021-08-15T07:14:14.337+00:00",
-      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 851, Virginia Beach",
+      "address": "Levinski St 108-118, Tel Aviv-Yafo",
       "occupiedStats": "vacant",
       "owner": "Sandy Court, LLC",
       "ownerStatus": "active",
@@ -183,7 +183,7 @@
     {
       "propertyId": "d76e1dff-f3bb-4d7d-ae26-3216441515b0",
       "createdOn": "2021-08-15T07:14:11.020+00:00",
-      "address": "815 Sandy Ct Virginia Beach, VA 23451, Unit 849, Virginia Beach",
+      "address": "Yehieli St 5, Tel Aviv-Yafo, 6514946",
       "occupiedStats": "inactive",
       "owner": "Sandy Court, LLC",
       "ownerStatus": "active",

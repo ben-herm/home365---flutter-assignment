@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/UI/widgets/shimmer/shimmerWidget.dart';
+import '../../../../../core/UI/widgets/shimmer/shimmer_widget.dart';
 
 class PropertyCardShimmer extends StatelessWidget {
   final double height;
@@ -15,16 +15,16 @@ class PropertyCardShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(32),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          ShimmerWidget.circular(height: height, width: width),
-          const SizedBox(height: 8),
-          const ShimmerWidget.rectangular(height: 12),
-          const SizedBox(height: 8),
-          const ShimmerWidget.rectangular(height: 12),
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          ShimmerWidget.rectangular(height: 32),
+          SizedBox(height: 30),
+          ShimmerWidget.rectangular(height: 12),
+          SizedBox(height: 30),
+          ShimmerWidget.rectangular(height: 12),
         ],
       ),
     );

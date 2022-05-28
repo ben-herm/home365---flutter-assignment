@@ -2,6 +2,8 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:home_365_assignment/features/vacancies/model/tenant/tenant_model.dart';
+
+import 'package:flutter_geocoder/geocoder.dart';
 part 'property_model.freezed.dart';
 part 'property_model.g.dart';
 
@@ -17,6 +19,7 @@ class PropertyModel with _$PropertyModel {
     @Default('') final String ownerStatus,
     @Default('') final String plan,
     @Default(TenantModel()) final TenantModel tenant,
+    final List<double?>? coordinates,
   }) = _PropertyModel;
 
   factory PropertyModel.empty() {
