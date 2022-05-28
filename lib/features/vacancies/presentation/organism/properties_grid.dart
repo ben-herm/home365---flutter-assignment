@@ -55,8 +55,7 @@ class _PropertiesGridState extends State<PropertiesGrid> {
           Expanded(
             child: FutureBuilder<List<PropertyModel>>(
               future: _getPropertiesLanLon, // async work
-              builder: (BuildContext context,
-                  AsyncSnapshot<List<PropertyModel>> snapshot) {
+              builder: (_, AsyncSnapshot<List<PropertyModel>> snapshot) {
                 return PrimaryScrollController(
                   controller: myScrollWorks,
                   child: CupertinoScrollbar(
@@ -69,20 +68,22 @@ class _PropertiesGridState extends State<PropertiesGrid> {
                               if (snapshot.hasData &&
                                   snapshot.connectionState ==
                                       ConnectionState.done) {
-                                final sortedProperty =
-                                    MapUtils.sortCoordinatesByType(
-                                        snapshot.data!.toSet().toList(),
-                                        _sortPropertiesType,
-                                        widget.userLocation)[index];
+                                final sortedProperties =
+                                    MapUtils.sortPropertiesByType(
+                                  snapshot.data!.toSet().toList(),
+                                  _sortPropertiesType,
+                                  widget.userLocation,
+                                );
+                                final property = sortedProperties[index];
                                 return PropertyCard(
                                   propertiesLanLon: Coordinates(
-                                    sortedProperty.coordinates![0],
-                                    sortedProperty.coordinates![1],
+                                    property.coordinates![0],
+                                    property.coordinates![1],
                                   ),
                                   userLocation: widget.userLocation,
                                   height: 175,
                                   width: 150,
-                                  property: sortedProperty,
+                                  property: property,
                                   onTap: (polyLines) => widget.onTap(polyLines),
                                   calculatingPolyline:
                                       widget.calculatingPolyline,

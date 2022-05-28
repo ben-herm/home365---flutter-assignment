@@ -1,12 +1,7 @@
-import 'package:flutter_geocoder/geocoder.dart';
+// ignore_for_file: constant_identifier_names
+
 import 'dart:math';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_polyline_points/flutter_polyline_points.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import '../../../../core/UI/theme/theme.dart';
-import 'package:enum_to_string/enum_to_string.dart';
 import 'package:location/location.dart' hide Location;
-import 'package:flutter_geocoder/geocoder.dart';
 
 import '../../features/vacancies/model/property/property_model.dart';
 import '../../features/vacancies/model/repository/property_repository_impl.dart';
@@ -55,19 +50,19 @@ class MapUtils {
     return properties;
   }
 
-  static List<PropertyModel> sortCoordinatesByType(
-      List<PropertyModel> propertyies,
+  static List<PropertyModel> sortPropertiesByType(
+      List<PropertyModel> properties,
       SortBy sortPropertiesType,
       LocationData userLocation) {
     switch (sortPropertiesType) {
       case SortBy.normal:
-        return propertyies;
+        return properties;
       case SortBy.distance:
-        return sortPropertiesByDistance(propertyies, userLocation);
+        return sortPropertiesByDistance(properties, userLocation);
       case SortBy.name:
-        return sortPropertiesByName(propertyies, userLocation);
+        return sortPropertiesByName(properties, userLocation);
       default:
-        return propertyies;
+        return properties;
     }
   }
 
@@ -78,8 +73,11 @@ class MapUtils {
     final propertiesLanLon =
         await PropertyModelImpl().getPropertiesLanLon(properties);
     List<PropertyModel> _propertiesWithCoordinates = List.from(properties);
-    _propertiesWithCoordinates = MapUtils.sortCoordinatesByType(
-        _propertiesWithCoordinates, sortPropertiesType, userLocation);
+    _propertiesWithCoordinates = MapUtils.sortPropertiesByType(
+      _propertiesWithCoordinates,
+      sortPropertiesType,
+      userLocation,
+    );
     _propertiesWithCoordinates.asMap().forEach(
       (index, value) {
         _propertiesWithCoordinates[index] =

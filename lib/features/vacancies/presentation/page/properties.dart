@@ -22,7 +22,6 @@ class Properties extends HookWidget {
     final isCalculating = useState(false);
     final polyLineFromPropertyToUser =
         useState(Map<PolylineId, Polyline>.from({}));
-
     final userLanLon = useState(LocationData.fromMap({}));
 
     return SafeArea(
@@ -31,7 +30,7 @@ class Properties extends HookWidget {
         body: FutureBuilder<List<PropertyModel>>(
           future: _getProperties, // async work
           builder: (
-            BuildContext context,
+            _,
             AsyncSnapshot<List<PropertyModel>> snapshot,
           ) {
             if (snapshot.hasData &&

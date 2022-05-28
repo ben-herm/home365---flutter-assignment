@@ -16,7 +16,7 @@ class MainHeader extends StatelessWidget {
         horizontal: 16,
         vertical: 8,
       ),
-      alignment: Alignment.center,
+      alignment: Alignment.topLeft,
       color: T.colors.light,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),

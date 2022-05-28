@@ -63,8 +63,8 @@ class PropertyCard extends HookWidget {
       return PropertyCardShimmer(height: height, width: width);
     }
     final String distanceFromPropertyToUser = MapUtils.calculateDistance(
-      propertiesLanLon.latitude,
-      propertiesLanLon.longitude,
+      propertiesLanLon.latitude ?? 32,
+      propertiesLanLon.longitude ?? 34,
       userLocation.latitude,
       userLocation.longitude,
     ).round().toString();
