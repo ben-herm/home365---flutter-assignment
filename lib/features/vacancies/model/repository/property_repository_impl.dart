@@ -40,22 +40,21 @@ class PropertyModelImpl extends PropertyRepository {
         final query = property.address;
         List<Address> addresses = await Geocoder.local
             .findAddressesFromQuery(query)
-            .timeout(const Duration(milliseconds: 1000));
+            .timeout(const Duration(milliseconds: 500));
         if (addresses.isNotEmpty) {
           Coordinates coordinates = addresses.first.coordinates;
           propertiesLanLonList.add(coordinates);
         } else {
           // fill location with default values - locations not found by the geo locator or timed out..
           propertiesLanLonList.add(
-            Coordinates(32, 34),
+            Coordinates(32.077714, 34.604068),
           );
         }
       } on Exception catch (e) {
         // fill location with default values - locations not found by the geo locator or timed out..
         propertiesLanLonList.add(
-          Coordinates(32, 34),
+          Coordinates(32.077714, 34.604068),
         );
-        continue;
       }
     }
     return Future.value(propertiesLanLonList);

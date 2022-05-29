@@ -22,7 +22,7 @@ class GoogleMapsState extends State<GoogleMaps> {
   final Location _location = Location();
   late LocationData currentLocation;
   static const CameraPosition _intialCameraPosition = CameraPosition(
-    target: LatLng(32.085300, 34.781769),
+    target: LatLng(32.0797024, 34.8060633),
     zoom: 15,
   );
 
@@ -52,16 +52,13 @@ class GoogleMapsState extends State<GoogleMaps> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       height: 250,
-      child: !widget.isCalculating.value
-          ? GoogleMap(
-              polylines:
-                  Set<Polyline>.of(widget.polyLineFromPropertyToUser.values),
-              myLocationEnabled: true,
-              mapType: MapType.normal,
-              initialCameraPosition: _intialCameraPosition,
-              onMapCreated: _onMapCreated,
-            )
-          : const MainCircularLoader(),
+      child: GoogleMap(
+        polylines: Set<Polyline>.of(widget.polyLineFromPropertyToUser.values),
+        myLocationEnabled: true,
+        mapType: MapType.normal,
+        initialCameraPosition: _intialCameraPosition,
+        onMapCreated: _onMapCreated,
+      ),
     );
   }
 }

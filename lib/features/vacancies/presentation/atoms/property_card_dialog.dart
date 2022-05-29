@@ -10,11 +10,15 @@ class PropertyCardDialog extends StatelessWidget {
   const PropertyCardDialog({
     required this.property,
     required this.distanceFromPropertyToUser,
+    required this.onTap,
+    required this.isSelected,
     Key? key,
   }) : super(key: key);
 
   final PropertyModel property;
+  final VoidCallback onTap;
   final String distanceFromPropertyToUser;
+  final bool isSelected;
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -38,8 +42,9 @@ class PropertyCardDialog extends StatelessWidget {
       actions: <Widget>[
         CustomButton(
           color: T.colors.lightGrey,
-          text: const CustomText('Select'),
+          text: CustomText(!isSelected ? 'Select' : 'Unselect'),
           onTap: () => {
+            onTap(),
             Navigator.pop(context),
           },
         ),

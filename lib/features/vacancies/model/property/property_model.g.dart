@@ -8,6 +8,7 @@ part of 'property_model.dart';
 
 _$_PropertyModel _$$_PropertyModelFromJson(Map<String, dynamic> json) =>
     _$_PropertyModel(
+      isSelected: json['isSelected'] as bool? ?? false,
       propertyId: json['propertyId'] as String? ?? '',
       createdOn: json['createdOn'] as String? ?? '',
       address: json['address'] as String? ?? '',
@@ -25,6 +26,7 @@ _$_PropertyModel _$$_PropertyModelFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_PropertyModelToJson(_$_PropertyModel instance) =>
     <String, dynamic>{
+      'isSelected': instance.isSelected,
       'propertyId': instance.propertyId,
       'createdOn': instance.createdOn,
       'address': instance.address,

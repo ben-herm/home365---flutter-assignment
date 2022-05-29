@@ -3,7 +3,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:home_365_assignment/features/vacancies/model/tenant/tenant_model.dart';
 
-import 'package:flutter_geocoder/geocoder.dart';
 part 'property_model.freezed.dart';
 part 'property_model.g.dart';
 
@@ -11,6 +10,7 @@ part 'property_model.g.dart';
 class PropertyModel with _$PropertyModel {
   const PropertyModel._();
   const factory PropertyModel({
+    @Default(false) final bool isSelected,
     @Default('') final String propertyId,
     @Default('') final String createdOn,
     @Default('') final String address,

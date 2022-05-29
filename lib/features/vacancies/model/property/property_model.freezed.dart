@@ -23,7 +23,8 @@ class _$PropertyModelTearOff {
   const _$PropertyModelTearOff();
 
   _PropertyModel call(
-      {String propertyId = '',
+      {bool isSelected = false,
+      String propertyId = '',
       String createdOn = '',
       String address = '',
       String occupiedStats = '',
@@ -33,6 +34,7 @@ class _$PropertyModelTearOff {
       TenantModel tenant = const TenantModel(),
       List<double?>? coordinates}) {
     return _PropertyModel(
+      isSelected: isSelected,
       propertyId: propertyId,
       createdOn: createdOn,
       address: address,
@@ -55,6 +57,7 @@ const $PropertyModel = _$PropertyModelTearOff();
 
 /// @nodoc
 mixin _$PropertyModel {
+  bool get isSelected => throw _privateConstructorUsedError;
   String get propertyId => throw _privateConstructorUsedError;
   String get createdOn => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
@@ -77,7 +80,8 @@ abstract class $PropertyModelCopyWith<$Res> {
           PropertyModel value, $Res Function(PropertyModel) then) =
       _$PropertyModelCopyWithImpl<$Res>;
   $Res call(
-      {String propertyId,
+      {bool isSelected,
+      String propertyId,
       String createdOn,
       String address,
       String occupiedStats,
@@ -101,6 +105,7 @@ class _$PropertyModelCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? isSelected = freezed,
     Object? propertyId = freezed,
     Object? createdOn = freezed,
     Object? address = freezed,
@@ -112,6 +117,10 @@ class _$PropertyModelCopyWithImpl<$Res>
     Object? coordinates = freezed,
   }) {
     return _then(_value.copyWith(
+      isSelected: isSelected == freezed
+          ? _value.isSelected
+          : isSelected // ignore: cast_nullable_to_non_nullable
+              as bool,
       propertyId: propertyId == freezed
           ? _value.propertyId
           : propertyId // ignore: cast_nullable_to_non_nullable
@@ -167,7 +176,8 @@ abstract class _$PropertyModelCopyWith<$Res>
       __$PropertyModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String propertyId,
+      {bool isSelected,
+      String propertyId,
       String createdOn,
       String address,
       String occupiedStats,
@@ -194,6 +204,7 @@ class __$PropertyModelCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? isSelected = freezed,
     Object? propertyId = freezed,
     Object? createdOn = freezed,
     Object? address = freezed,
@@ -205,6 +216,10 @@ class __$PropertyModelCopyWithImpl<$Res>
     Object? coordinates = freezed,
   }) {
     return _then(_PropertyModel(
+      isSelected: isSelected == freezed
+          ? _value.isSelected
+          : isSelected // ignore: cast_nullable_to_non_nullable
+              as bool,
       propertyId: propertyId == freezed
           ? _value.propertyId
           : propertyId // ignore: cast_nullable_to_non_nullable
@@ -249,7 +264,8 @@ class __$PropertyModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_PropertyModel extends _PropertyModel {
   const _$_PropertyModel(
-      {this.propertyId = '',
+      {this.isSelected = false,
+      this.propertyId = '',
       this.createdOn = '',
       this.address = '',
       this.occupiedStats = '',
@@ -263,6 +279,9 @@ class _$_PropertyModel extends _PropertyModel {
   factory _$_PropertyModel.fromJson(Map<String, dynamic> json) =>
       _$$_PropertyModelFromJson(json);
 
+  @JsonKey()
+  @override
+  final bool isSelected;
   @JsonKey()
   @override
   final String propertyId;
@@ -292,7 +311,7 @@ class _$_PropertyModel extends _PropertyModel {
 
   @override
   String toString() {
-    return 'PropertyModel(propertyId: $propertyId, createdOn: $createdOn, address: $address, occupiedStats: $occupiedStats, owner: $owner, ownerStatus: $ownerStatus, plan: $plan, tenant: $tenant, coordinates: $coordinates)';
+    return 'PropertyModel(isSelected: $isSelected, propertyId: $propertyId, createdOn: $createdOn, address: $address, occupiedStats: $occupiedStats, owner: $owner, ownerStatus: $ownerStatus, plan: $plan, tenant: $tenant, coordinates: $coordinates)';
   }
 
   @override
@@ -300,6 +319,8 @@ class _$_PropertyModel extends _PropertyModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _PropertyModel &&
+            const DeepCollectionEquality()
+                .equals(other.isSelected, isSelected) &&
             const DeepCollectionEquality()
                 .equals(other.propertyId, propertyId) &&
             const DeepCollectionEquality().equals(other.createdOn, createdOn) &&
@@ -318,6 +339,7 @@ class _$_PropertyModel extends _PropertyModel {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(isSelected),
       const DeepCollectionEquality().hash(propertyId),
       const DeepCollectionEquality().hash(createdOn),
       const DeepCollectionEquality().hash(address),
@@ -341,7 +363,8 @@ class _$_PropertyModel extends _PropertyModel {
 
 abstract class _PropertyModel extends PropertyModel {
   const factory _PropertyModel(
-      {String propertyId,
+      {bool isSelected,
+      String propertyId,
       String createdOn,
       String address,
       String occupiedStats,
@@ -355,6 +378,8 @@ abstract class _PropertyModel extends PropertyModel {
   factory _PropertyModel.fromJson(Map<String, dynamic> json) =
       _$_PropertyModel.fromJson;
 
+  @override
+  bool get isSelected;
   @override
   String get propertyId;
   @override

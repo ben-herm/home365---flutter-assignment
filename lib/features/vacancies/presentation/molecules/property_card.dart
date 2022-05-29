@@ -14,29 +14,31 @@ import '../atoms/property_card_dialog.dart';
 
 class PropertyCard extends HookWidget {
   final Coordinates propertiesLanLon;
-  final double height;
   final PropertyModel property;
-  final double width;
   final LocationData userLocation;
+  final VoidCallback onSelect;
   final Function(Map<PolylineId, Polyline>) onTap;
   final ValueNotifier<bool> calculatingPolyline;
   const PropertyCard({
     required this.propertiesLanLon,
     required this.onTap,
+    required this.onSelect,
     required this.property,
     required this.userLocation,
-    required this.height,
-    required this.width,
     required this.calculatingPolyline,
     Key? key,
   }) : super(key: key);
 
   void _propertyPressed(
-      BuildContext context, String distanceFromPropertyToUser) async {
+    BuildContext context,
+    String distanceFromPropertyToUser,
+  ) async {
     showDialog(
       context: context,
       builder: (context) {
         return PropertyCardDialog(
+          onTap: onSelect,
+          isSelected: property.isSelected,
           property: property,
           distanceFromPropertyToUser: distanceFromPropertyToUser,
         );
@@ -60,11 +62,11 @@ class PropertyCard extends HookWidget {
   @override
   Widget build(BuildContext context) {
     if (calculatingPolyline.value) {
-      return PropertyCardShimmer(height: height, width: width);
+      return const PropertyCardShimmer(height: 175, width: 175);
     }
     final String distanceFromPropertyToUser = MapUtils.calculateDistance(
-      propertiesLanLon.latitude ?? 32,
-      propertiesLanLon.longitude ?? 34,
+      propertiesLanLon.latitude,
+      propertiesLanLon.longitude,
       userLocation.latitude,
       userLocation.longitude,
     ).round().toString();
@@ -106,23 +108,21 @@ class PropertyCard extends HookWidget {
                     style: T.fonts.body3,
                   ),
                   color: T.colors.dark,
-                  onTap: () =>
-                      _propertyPressed(context, distanceFromPropertyToUser),
+                  onTap: () => _propertyPressed(
+                    context,
+                    distanceFromPropertyToUser,
+                  ),
                 ),
               )
             ],
           ),
         ),
         decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              offset: const Offset(0, -3),
-              color: T.colors.light,
-              blurRadius: 5,
-              spreadRadius: 10,
-            ),
-          ],
-        ),
+            border: Border.all(
+          color: property.isSelected ? T.colors.dark : T.colors.light,
+          style: BorderStyle.solid,
+          width: 1.0,
+        )),
       ),
     );
   }

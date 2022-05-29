@@ -19,7 +19,7 @@ class Properties extends HookWidget {
   final _getProperties = PropertyModelImpl().getMockedProperties();
   @override
   Widget build(BuildContext context) {
-    final isCalculating = useState(false);
+    final isCalculating = useState(true);
     final polyLineFromPropertyToUser =
         useState(Map<PolylineId, Polyline>.from({}));
     final userLanLon = useState(LocationData.fromMap({}));
@@ -57,7 +57,7 @@ class Properties extends HookWidget {
                                 polyLineFromPropertyToUser.value = polyLines,
                             userLocation: userLanLon.value,
                             properties: snapshot.data!,
-                            calculatingPolyline: isCalculating,
+                            calculating: isCalculating,
                           )
                         ],
                       ),
